@@ -1,6 +1,6 @@
 // src/components/Users/GetAllUsers.tsx
 import React, { useEffect, useState } from 'react';
-import { Box, Typography, List, ListItem, ListItemText, Divider, Card } from '@mui/material';
+import { Box, Typography, List, ListItemText, Divider, Card } from '@mui/material';
 import axios from 'axios';
 
 interface User {

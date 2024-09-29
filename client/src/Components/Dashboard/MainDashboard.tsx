@@ -10,6 +10,8 @@ const MainDashboard: React.FC = () => {
 
   const handleNavChange = (event: React.SyntheticEvent, newValue: number) => {
     setSelectedNav(newValue);
+    console.log(event)
+
   };
 
   return (

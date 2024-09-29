@@ -26,6 +26,8 @@ const ReturnBook: React.FC = () => {
         userId,
         returnDate: formattedDate, // Use formatted date string
       });
+      console.log(response)
+
 
       setAlert({ message: "Book returned successfully!", severity: "success" });
       setBookName('');

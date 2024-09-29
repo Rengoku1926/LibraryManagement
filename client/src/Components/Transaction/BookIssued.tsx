@@ -15,11 +15,7 @@ const BookIssued: React.FC = () => {
   const [currentlyIssued, setCurrentlyIssued] = useState<any | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  // Function to handle date input correctly
-  const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const selectedDate = e.target.value ? new Date(e.target.value) : null;
-    setIssueDate(selectedDate);
-  };
+ 
 
   // Function to handle the book issuance submission
   const handleSubmit = async () => {

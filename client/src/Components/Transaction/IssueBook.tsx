@@ -25,7 +25,10 @@ const IssueBook: React.FC = () => {
         bookName,
         userId,
         issueDate: formattedDate, // Use formatted date string
+
       });
+      console.log(response)
+
 
       setAlert({ message: "Book issued successfully!", severity: "success" });
       setBookName('');
