@@ -13,9 +13,7 @@ const app = express();
 
 // Add CORS configuration here
 app.use(cors({
-  origin: 'https://library-management-client23.vercel.app/',  // Vercel frontend URL
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true // If your requests use cookies or authentication
+  origin: '*', // Allows all origins (use with caution)
 }));
 
 app.use(express.json());
