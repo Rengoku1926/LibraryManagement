@@ -13,6 +13,8 @@ const TransactionDashboard: React.FC = () => {
 
   const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
     setSelectedTab(newValue);
+    console.log(event);
+
   };
 
   return (
