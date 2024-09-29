@@ -10,7 +10,7 @@ const SearchBookByName: React.FC = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`${BASE_URI}/books/searchBooks?term=${term}`);
+      const response = await axios.get(`${BASE_URI}/api/books/searchBooks?term=${term}`);
       setBooks(response.data);
     } catch (error) {
       console.error("Error searching books: ", error);

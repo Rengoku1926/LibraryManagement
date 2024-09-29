@@ -18,7 +18,7 @@ const GetAllUsers: React.FC = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get(`${BASE_URI}/users`);
+        const response = await axios.get(`${BASE_URI}/api/users`);
         setUsers(response.data);
       } catch (error) {
         console.error('Error fetching users', error);

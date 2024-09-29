@@ -17,7 +17,7 @@ const GetDate: React.FC = () => {
     setAlert(null);  // Reset alert
 
     try {
-      const response = await axios.get(`${BASE_URI}/transactions/dateRange`, {
+      const response = await axios.get(`${BASE_URI}/api/transactions/dateRange`, {
         params: { startDate, endDate }
       });
 

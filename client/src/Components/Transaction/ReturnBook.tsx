@@ -21,7 +21,7 @@ const ReturnBook: React.FC = () => {
       // Format date before sending to the server
       const formattedDate = returnDate ? returnDate.toISOString().split('T')[0] : null;
 
-      const response = await axios.post(`${BASE_URI}/transactions/return`, {
+      const response = await axios.post(`${BASE_URI}/api/transactions/return`, {
         bookName,
         userId,
         returnDate: formattedDate, // Use formatted date string

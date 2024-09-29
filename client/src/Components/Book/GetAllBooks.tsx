@@ -10,7 +10,7 @@ const GetAllBooks: React.FC = () => {
   useEffect(() => {
     const fetchBooks = async () => {
       try {
-        const response = await axios.get(`${BASE_URI}/books/`);
+        const response = await axios.get(`${BASE_URI}/api/books/`);
         setBooks(response.data);
       } catch (error) {
         console.error("Error fetching books: ", error);

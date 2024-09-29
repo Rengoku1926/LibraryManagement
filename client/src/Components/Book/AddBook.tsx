@@ -14,7 +14,7 @@ const AddBook: React.FC = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post(`${BASE_URI}/books/addbook`, {
+      const response = await axios.post(`${BASE_URI}/api/books/addbook`, {
         name,
         category,
         rentPerDay,

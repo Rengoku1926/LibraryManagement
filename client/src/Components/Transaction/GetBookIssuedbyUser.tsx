@@ -16,7 +16,7 @@ const GetBooksIssuedToPerson: React.FC = () => {
     setAlert(null);  // Reset alert
 
     try {
-      const response = await axios.get(`${BASE_URI}/transactions/personBooks`, { params: { userId } });
+      const response = await axios.get(`${BASE_URI}/api/transactions/personBooks`, { params: { userId } });
       const booksData = response.data;
 
       if (booksData && booksData.length > 0) {

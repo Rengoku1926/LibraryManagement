@@ -11,7 +11,7 @@ const SearchBookByRent: React.FC = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`${BASE_URI}/books/searchRent?minRent=${minRent}&maxRent=${maxRent}`);
+      const response = await axios.get(`${BASE_URI}/api/books/searchRent?minRent=${minRent}&maxRent=${maxRent}`);
       setBooks(response.data);
     } catch (error) {
       console.error("Error searching books by rent: ", error);

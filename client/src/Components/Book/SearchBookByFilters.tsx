@@ -13,7 +13,7 @@ const SearchBookByFilters: React.FC = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`${BASE_URI}/books/searchByAll?term=${term}&category=${category}&minRent=${minRent}&maxRent=${maxRent}`);
+      const response = await axios.get(`${BASE_URI}/api/books/searchByAll?term=${term}&category=${category}&minRent=${minRent}&maxRent=${maxRent}`);
       setBooks(response.data);
     } catch (error) {
       console.error("Error searching books by filters: ", error);

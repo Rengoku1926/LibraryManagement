@@ -12,7 +12,7 @@ const AddUser: React.FC = () => {
 
     const handleSubmit = async () => {
         try {
-            const response = await axios.post(`${BASE_URI}/users/addUser`, { name, email, contact });
+            const response = await axios.post(`${BASE_URI}/api/users/addUser`, { name, email, contact });
             console.log("User Added ", response.data); // Handle the response data here
             // Show success alert
             setAlert({ message: "User added successfully!", severity: "success" });

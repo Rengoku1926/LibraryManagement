@@ -16,7 +16,7 @@ const BookRent: React.FC = () => {
     setAlert(null);  // Reset alert
 
     try {
-      const response = await axios.get(`${BASE_URI}/transactions/bookRent`, { params: { bookName } });
+      const response = await axios.get(`${BASE_URI}/api/transactions/bookRent`, { params: { bookName } });
       const { totalRent } = response.data;
 
       if (totalRent !== undefined) {
