@@ -12,7 +12,7 @@ const app = express();
 
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:5173', // Replace with your frontend URL
+    origin: 'http://library-management-1926.vercel.app/', // Replace with your frontend URL
     credentials: true,
   }));
   
