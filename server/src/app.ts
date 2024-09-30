@@ -13,7 +13,8 @@ const app = express();
 
 // Add CORS configuration here
 app.use(cors({
-  origin: '*', // Allows all origins (use with caution)
+  origin: '*',  // or specify your front-end domain here
+  methods: ['GET', 'POST', 'OPTIONS']
 }));
 
 app.use(express.json());
