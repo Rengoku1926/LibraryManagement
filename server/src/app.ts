@@ -12,16 +12,14 @@ dotenv.config();
 const app = express();
 app.options('*', cors()); // Handles preflight requests for all routes
 
-// Add CORS configuration here
 app.use(cors({
-  origin: 'https://library-management-client23.vercel.app',  // or specify your front-end domain here
+  origin: 'https://library-management-client23.vercel.app',  
   methods: ['GET', 'POST', 'OPTIONS']
 }));
 
 app.use(express.json());
 app.use(bodyParser.json());
 
-// Your API routes
 app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);
 app.use('/api/transactions', transactionRoutes);
