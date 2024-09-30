@@ -34,7 +34,7 @@ export const getBooksByRentRange = async(req:Request, res:Response) => {
 export const getBooksByFilter = async (req: Request, res: Response) => {
   const { category, term, minRent, maxRent } = req.query;
 
-  // Build a dynamic filter object
+  //dynamic filter object
   const filter: any = {};
 
   // If category is provided, add it to the filter
