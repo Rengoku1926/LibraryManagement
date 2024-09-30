@@ -31,12 +31,35 @@ export const getBooksByRentRange = async(req:Request, res:Response) => {
     res.json(searchedBooks);
 };
 
-export const getBooksByFilter = async(req:Request, res:Response) => {
-    const {category, term, minRent, maxRent} = req.query;
-    const searchedBooks = await Book.find({
-        category: new RegExp(category as string, 'i'),
-        name: new RegExp(term as string, 'i'),
-        rentPerDay:  {$gte: Number(minRent), $lte:Number(maxRent)},
-    })
-    res.json(searchedBooks)
-}
+export const getBooksByFilter = async (req: Request, res: Response) => {
+  const { category, term, minRent, maxRent } = req.query;
+
+  // Build a dynamic filter object
+  const filter: any = {};
+
+  // If category is provided, add it to the filter
+  if (category) {
+    filter.category = new RegExp(category as string, 'i'); // Case-insensitive match
+  }
+
+  // If term is provided, search in the name field
+  if (term) {
+    filter.name = new RegExp(term as string, 'i'); // Case-insensitive match
+  }
+
+  // If minRent or maxRent are provided, add rent filter
+  if (minRent || maxRent) {
+    filter.rentPerDay = {
+      ...(minRent ? { $gte: Number(minRent) } : {}), // Greater than or equal to minRent
+      ...(maxRent ? { $lte: Number(maxRent) } : {}), // Less than or equal to maxRent
+    };
+  }
+
+  try {
+    // Fetch the books based on the dynamic filter
+    const searchedBooks = await Book.find(filter);
+    res.json(searchedBooks);
+  } catch (error) {
+    res.status(500).json({ message: 'Error while fetching books by filter' });
+  }
+};
