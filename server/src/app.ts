@@ -10,6 +10,7 @@ import transactionRoutes from './routes/transactionRoutes';
 dotenv.config();
 
 const app = express();
+app.options('*', cors()); // Handles preflight requests for all routes
 
 // Add CORS configuration here
 app.use(cors({
